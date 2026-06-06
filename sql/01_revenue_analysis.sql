@@ -1,3 +1,8 @@
+-- ================================================
+-- Revenue & Profitability Analysis
+-- Project: Olist E-Commerce Analysis
+-- ================================================
+
 -- Query 1: Total Revenue (delivered orders only)
 SELECT ROUND(SUM(p.payment_value), 2) as total_revenue
 FROM olist_orders_dataset o
@@ -16,7 +21,7 @@ WHERE o.order_status = 'delivered'
 GROUP BY month
 ORDER BY month;
 
--- Query 3: Average order Value
+-- Query 3: Average Order Value
 WITH order_totals AS (
     SELECT 
         o.order_id,
